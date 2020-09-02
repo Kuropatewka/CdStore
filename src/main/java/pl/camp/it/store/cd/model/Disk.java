@@ -11,6 +11,8 @@ public class Disk {
     private String title;
     @Column(nullable = false)
     private int year;
+    @Column(nullable = false)
+    private int amount;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Artist artist;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -56,12 +58,21 @@ public class Disk {
         this.genre = genre;
     }
 
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
     @Override
     public String toString() {
         return "Disk{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", year=" + year +
+                ", amount=" + amount +
                 ", artist=" + artist +
                 ", genre=" + genre +
                 '}';
