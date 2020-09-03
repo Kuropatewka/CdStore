@@ -4,4 +4,5 @@ import pl.camp.it.store.cd.model.User;
 
 public interface IUserService {
     void addUser(User user);
+    boolean authenticate(User user);
 }

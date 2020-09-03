@@ -1,0 +1,23 @@
+#login-form {
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+    margin-top: 100px;
+    padding: 30px;
+    border: solid;
+    border-width: 10px;
+    border-color: pink;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#login-form input {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#login-form a {
+    text-decoration: none;
+}
+

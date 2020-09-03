@@ -1,6 +1,12 @@
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/model/Disk.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/model/Artist.java
+/home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/services/IUserService.java
+/home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/controllers/UserController.java
+/home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/dao/impl/UserDAO.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/AppConfiguration.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/model/Genre.java
+/home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/services/impl/UserService.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/App.java
+/home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/controllers/AuthenticationController.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/model/User.java
+/home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/dao/IUserDAO.java

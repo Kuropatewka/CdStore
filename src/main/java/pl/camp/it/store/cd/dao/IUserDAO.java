@@ -4,4 +4,5 @@ import pl.camp.it.store.cd.model.User;
 
 public interface IUserDAO {
     void addUser(User user);
+    User getUserByLogin(String login);
 }

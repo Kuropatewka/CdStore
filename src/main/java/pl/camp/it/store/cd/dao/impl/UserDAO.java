@@ -3,6 +3,7 @@ package pl.camp.it.store.cd.dao.impl;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.camp.it.store.cd.dao.IUserDAO;
@@ -30,5 +31,15 @@ public class UserDAO implements IUserDAO {
         } finally {
             session.close();
         }
+    }
+
+    @Override
+    public User getUserByLogin(String login) {
+        Session session = sessionFactory.openSession();
+        Query<User> query = session.createQuery("FROM pl.camp.it.store.cd.model.User WHERE login = :login");
+        query.setParameter("login", login);
+        User user = query.getSingleResult();
+        session.close();
+        return user;
     }
 }
