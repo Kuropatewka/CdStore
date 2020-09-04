@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <title>CD-store</title>
     <link rel="stylesheet" type="text/css" href="register.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
 </head>
 <body>
 <form id="register-form" method="POST" th:object="${user}">
 
-    <p><b>Sign-up</b></p>
+    <h1><b>Sign-up</b></h1>
 
-    <input type="text" placeholder="login" th:field="*{login}"> <br>
-    <input type="password" placeholder="password" th:field="*{password}"> <br>
-    <input type="password" placeholder="repeat password" name="password2"> <br>
+    <div class="textbox">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="login" th:field="*{login}">
+    </div>
 
-    <input type="submit" value="OK">
+    <div class="textbox">
+        <i class="fa fa-lock"></i>
+        <input type="password" placeholder="password" th:field="*{password}">
+    </div>
+
+    <div class="textbox">
+        <i class="fa fa-lock"></i>
+        <input type="password" placeholder="password" name="password2">
+    </div>
+
+    <div class="button">
+        <input type="submit" value="OK">
+    </div>
 
 </form>
 
