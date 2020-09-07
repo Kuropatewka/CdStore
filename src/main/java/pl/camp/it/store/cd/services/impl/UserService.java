@@ -33,4 +33,15 @@ public class UserService implements IUserService {
         }
 
     }
+
+    @Override
+    public boolean registerUser(User user, String password2) {
+        if(!user.getPassword().equals(password2)) {
+            return false;
+        }
+
+        user.setPassword(DigestUtils.md5Hex(user.getPassword()));
+        this.userDAO.addUser(user);
+        return true;
+    }
 }
