@@ -7,25 +7,10 @@
 </head>
 <body>
 
-    <div id="logo">
-
-    </div>
-
-    <div id="user-menu">
-        <a href="/basket" id="basket-button"></a>
-        <a href="/login" id="login-button"></a>
-    </div>
-
-    <div id="finder">
-        <form method="POST">
-            <input type="text" placeholder="Szukaj">
-            <input type="submit" value="OK">
-        </form>
-    </div>
-
-    <div id="content">
-
-    </div>
+<div th:replace="szablon.html :: logo"></div>
+<div th:replace="szablon.html :: userMenu"></div>
+<div th:replace="szablon.html :: finder"></div>
+<div th:replace="szablon.html :: content"></div>
 
 </body>
 </html>

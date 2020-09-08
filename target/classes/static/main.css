@@ -15,9 +15,16 @@ body {
     width: 50%;
     height: 200px;
     left: 0;
+
+}
+
+#logo-button {
     background-image: url("logo-cd.png");
     background-size: contain;
     background-repeat: no-repeat;
+    float: left;
+    width: 190px;
+    height: 190px;
 }
 
 #user-menu {
@@ -82,3 +89,4 @@ body {
     left: 5%;
     width: 90%;
 }
+

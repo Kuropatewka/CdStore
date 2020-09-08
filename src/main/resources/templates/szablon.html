@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>CD-store</title>
+</head>
+<body>
+
+<div id="logo" th:fragment="logo">
+    <a href="/" id="logo-button"></a>
+</div>
+
+<div id="user-menu" th:fragment="userMenu">
+    <a href="/basket" id="basket-button"></a>
+    <th:block th:if="${!isLogged}">
+        <a href="/login" id="login-button"></a>
+    </th:block>
+    <th:block th:if="${isLogged}">
+        <a href="/logout" id="login-button"></a>
+    </th:block>
+
+</div>
+
+<div id="finder" th:fragment="finder">
+    <form method="POST">
+        <input type="text" placeholder="Szukaj">
+        <input type="submit" value="OK">
+    </form>
+</div>
+
+<div id="content" th:fragment="content">
+    <div th:block th:each="currentDisk : ${disks}">
+        <div class="disk">
+            <div class="labels">
+                <div class="label">Title:</div>
+                <div class="value" th:text="${currentDisk.title}"></div>
+            </div>
+
+            <div class="labels">
+                <div class="label">Artist:</div>
+                <div class="value" th:text="${currentDisk.artist.name}"></div>
+            </div>
+
+            <div class="labels">
+                <div class="label">Genre:</div>
+                <div class="value" th:text="${currentDisk.genre.name}"></div>
+            </div>
+
+            <div class="labels">
+                <div class="label">Year release:</div>
+                <div class="value" th:text="${currentDisk.year}"></div>
+            </div>
+
+            <div class="labels">
+                <div class="label">Amount:</div>
+                <div class="value" th:text="${currentDisk.amount}"></div>
+            </div>
+
+            <div class="labels">
+                <div class="label">Price:</div>
+                <div class="value" th:text="${currentDisk.price}"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
