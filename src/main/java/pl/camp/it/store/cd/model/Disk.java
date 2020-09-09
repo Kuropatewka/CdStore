@@ -19,6 +19,8 @@ public class Disk {
     private Artist artist;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Genre genre;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Image image;
 
     public int getId() {
         return id;

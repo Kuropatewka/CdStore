@@ -6,11 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.camp.it.store.cd.dao.IDiskDAO;
-import pl.camp.it.store.cd.model.Artist;
-import pl.camp.it.store.cd.model.Disk;
-import pl.camp.it.store.cd.model.Genre;
-import pl.camp.it.store.cd.model.User;
+import pl.camp.it.store.cd.model.*;
 import pl.camp.it.store.cd.services.IUserService;
+
+import java.net.URL;
 
 @Controller
 @RequestMapping("/admin/utils")
