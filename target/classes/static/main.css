@@ -80,7 +80,6 @@ body {
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
-    cursor: pointer;
 }
 
 #content {
@@ -99,11 +98,14 @@ body {
     padding: 5px 5px;
     display: inline-block;
     margin: 20px 15px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .labels {
-    padding: 5px 5px;
+    padding: 5px 0px;
+    display: inline-block;
+    width: 65%;
+    float: left;
 }
 
 .label {
@@ -112,5 +114,15 @@ body {
 
 .value {
     display: inline-block;
+}
+
+.images {
+   display: inline-block;
+   width: 29%;
+}
+
+.images img {
+    height: 180px;
+    width: 170px;
 }
 

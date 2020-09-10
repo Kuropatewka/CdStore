@@ -6,6 +6,7 @@
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/services/IDiskService.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/AppConfiguration.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/App.java
+/home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/model/CoverImage.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/controllers/CommonController.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/dao/IUserDAO.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/model/Artist.java

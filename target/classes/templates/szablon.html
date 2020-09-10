@@ -54,6 +54,10 @@
                 <div class="label"><b>Price:</b></div>
                 <div class="value" th:text="${currentDisk.price}"></div>
             </div>
+
+            <div class="images">
+                <img th:src="${currentDisk.coverImage.file}"/>
+            </div>
     </div>
 </div>
 

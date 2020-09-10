@@ -33,6 +33,7 @@
         <mapping class="pl.camp.it.store.cd.model.Artist"/>
         <mapping class="pl.camp.it.store.cd.model.Genre"/>
         <mapping class="pl.camp.it.store.cd.model.User"/>
+        <mapping class="pl.camp.it.store.cd.model.CoverImage"/>
 
     </session-factory>
 </hibernate-configuration>

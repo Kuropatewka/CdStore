@@ -20,7 +20,7 @@ public class Disk {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Genre genre;
     @OneToOne(cascade = CascadeType.ALL)
-    private Image image;
+    private CoverImage coverImage;
 
     public int getId() {
         return id;
@@ -76,6 +76,14 @@ public class Disk {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public CoverImage getCoverImage() {
+        return coverImage;
+    }
+
+    public void setCoverImage(CoverImage coverImage) {
+        this.coverImage = coverImage;
     }
 
     @Override

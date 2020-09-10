@@ -27,12 +27,13 @@
         </property>
 
         <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
         <mapping class="pl.camp.it.store.cd.model.Disk"/>
         <mapping class="pl.camp.it.store.cd.model.Artist"/>
         <mapping class="pl.camp.it.store.cd.model.Genre"/>
         <mapping class="pl.camp.it.store.cd.model.User"/>
+        <mapping class="pl.camp.it.store.cd.model.CoverImage"/>
 
     </session-factory>
 </hibernate-configuration>
