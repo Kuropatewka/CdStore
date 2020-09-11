@@ -7,4 +7,8 @@ import java.util.List;
 public interface IDiskDAO {
     void addDisk(Disk disk);
     List<Disk> getAllDisks();
+    List<Disk> findDisks(String pattern);
+    List<Disk> getDiskByArtistId(int id);
+    List<Disk> getDiskByGenreId(int id);
+    Disk getDiskById(int id);
 }

@@ -7,4 +7,5 @@ import java.util.List;
 public interface IDiskService {
     void addDisk(Disk disk);
     List<Disk> getAllDisks();
+    List<Disk> findDisks(String pattern);
 }

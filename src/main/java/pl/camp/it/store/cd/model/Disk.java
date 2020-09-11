@@ -1,6 +1,7 @@
 package pl.camp.it.store.cd.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity(name = "tdisk")
 public class Disk {
@@ -97,5 +98,10 @@ public class Disk {
                 ", artist=" + artist +
                 ", genre=" + genre +
                 '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id;
     }
 }
