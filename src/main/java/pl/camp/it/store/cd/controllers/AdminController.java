@@ -40,7 +40,7 @@ public class AdminController {
         disk.setPrice(39.99);
 
         CoverImage coverImage = new CoverImage();
-        coverImage.setFile("/resources/static/architects.jpg");
+        coverImage.setFile("architects.jpg");
 
         Artist artist = new Artist();
         artist.setName("Architects");
@@ -59,7 +59,7 @@ public class AdminController {
         disk2.setPrice(59.99);
 
         CoverImage coverImage2 = new CoverImage();
-        coverImage2.setFile("/resources/static/architects2.jpg");
+        coverImage2.setFile("architects2.jpg");
 
         disk2.setArtist(artist);
         disk2.setGenre(genre);
@@ -72,7 +72,7 @@ public class AdminController {
         disk3.setPrice(49.99);
 
         CoverImage coverImage3 = new CoverImage();
-        coverImage3.setFile("/resources/static/architects3.jpg");
+        coverImage3.setFile("architects3.jpg");
 
         disk3.setArtist(artist);
         disk3.setGenre(genre);
@@ -91,7 +91,7 @@ public class AdminController {
         genre2.setName("Djent");
 
         CoverImage coverImage4 = new CoverImage();
-        coverImage4.setFile("/resources/static/periphery.jpg");
+        coverImage4.setFile("periphery.jpg");
 
         disk4.setArtist(artist2);
         disk4.setGenre(genre2);
@@ -110,7 +110,7 @@ public class AdminController {
         genre3.setName("Death metal");
 
         CoverImage coverImage5 = new CoverImage();
-        coverImage5.setFile("/resources/static/decapitated.jpg");
+        coverImage5.setFile("decapitated.jpg");
 
         disk5.setArtist(artist3);
         disk5.setGenre(genre3);
@@ -129,7 +129,7 @@ public class AdminController {
         genre4.setName("Heavy metal");
 
         CoverImage coverImage6 = new CoverImage();
-        coverImage6.setFile("/resources/static/metallica.jpg");
+        coverImage6.setFile("metallica.jpg");
 
         disk6.setArtist(artist4);
         disk6.setGenre(genre4);

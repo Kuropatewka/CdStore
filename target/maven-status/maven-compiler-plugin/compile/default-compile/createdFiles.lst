@@ -3,6 +3,7 @@ pl/camp/it/store/cd/model/Disk.class
 pl/camp/it/store/cd/services/impl/UserServiceImpl.class
 pl/camp/it/store/cd/model/Artist.class
 pl/camp/it/store/cd/dao/impl/ArtistDAOImpl.class
+pl/camp/it/store/cd/services/IBasketService.class
 pl/camp/it/store/cd/dao/IUserDAO.class
 pl/camp/it/store/cd/services/IDiskService.class
 pl/camp/it/store/cd/dao/impl/DiskDAOImpl.class
