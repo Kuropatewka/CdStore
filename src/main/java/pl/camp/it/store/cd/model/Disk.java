@@ -11,7 +11,7 @@ public class Disk {
     @Column(nullable = false)
     private String title;
     @Column(nullable = false)
-    private int year;
+    private String year;
     @Column(nullable = false)
     private int amount;
     @Column(nullable = false)
@@ -39,11 +39,11 @@ public class Disk {
         this.title = title;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

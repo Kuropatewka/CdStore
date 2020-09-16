@@ -25,6 +25,7 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String registerForm(Model model) {
         model.addAttribute("user", new User());
+        model.addAttribute("isLogged", false);
         return "register";
     }
 
@@ -41,7 +42,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout () {
+    public String logout() {
         this.sessionObject.setUser(null);
         return "redirect:/main";
     }

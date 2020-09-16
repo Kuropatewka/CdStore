@@ -34,6 +34,7 @@
         <mapping class="pl.camp.it.store.cd.model.Genre"/>
         <mapping class="pl.camp.it.store.cd.model.User"/>
         <mapping class="pl.camp.it.store.cd.model.CoverImage"/>
+        <mapping class="pl.camp.it.store.cd.model.Admin"/>
 
     </session-factory>
 </hibernate-configuration>

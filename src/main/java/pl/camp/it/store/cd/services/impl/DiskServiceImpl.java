@@ -1,3 +1,4 @@
+/*
 package pl.camp.it.store.cd.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -5,6 +6,7 @@ import org.springframework.stereotype.Service;
 import pl.camp.it.store.cd.dao.IArtistDAO;
 import pl.camp.it.store.cd.dao.IDiskDAO;
 import pl.camp.it.store.cd.dao.IGenreDAO;
+import pl.camp.it.store.cd.filter.DiskFilter;
 import pl.camp.it.store.cd.model.Artist;
 import pl.camp.it.store.cd.model.Disk;
 import pl.camp.it.store.cd.model.Genre;
@@ -39,10 +41,10 @@ public class DiskServiceImpl implements IDiskService {
     }
 
     @Override
-    public List<Disk> findDisks(String pattern) {
+    public List<Disk> getDiskByFilter(DiskFilter diskFilter) {
         Set<Disk> result = new HashSet<>();
 
-        List<Disk> disks = this.diskDAO.findDisks(pattern);
+        List<Disk> disks = this.diskDAO.getDiskByFilter(pattern, genre, artist, year);
 
         result.addAll(disks);
 
@@ -64,3 +66,4 @@ public class DiskServiceImpl implements IDiskService {
     }
 
 }
+*/

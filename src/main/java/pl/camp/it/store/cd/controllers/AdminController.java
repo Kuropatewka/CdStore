@@ -3,31 +3,31 @@ package pl.camp.it.store.cd.controllers;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.camp.it.store.cd.dao.IDiskDAO;
 import pl.camp.it.store.cd.model.*;
-import pl.camp.it.store.cd.services.IUserService;
-
-import java.net.URL;
+import pl.camp.it.store.cd.services.IAdminService;
 
 @Controller
 @RequestMapping("/admin/utils")
 public class AdminController {
 
     @Autowired
-    IUserService userService;
+    IAdminService adminService;
 
     @Autowired
     IDiskDAO diskDAO;
 
-    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
-    public String addUser() {
-        User user = new User();
-        user.setLogin("admin");
-        user.setPassword(DigestUtils.md5Hex("admin"));
-        this.userService.addUser(user);
-        return "redirect:/login";
+    @RequestMapping(value = "/addAdmin", method = RequestMethod.GET)
+    public String addAdmin(Model model) {
+        Admin admin = new Admin();
+        admin.setLogin("admin");
+        admin.setPassword(DigestUtils.md5Hex("admin"));
+        model.addAttribute("isLogged", false);
+        this.adminService.addAdmin(admin);
+        return "redirect:/main";
     }
 
     @RequestMapping(value = "/addDisks", method = RequestMethod.GET)
@@ -35,7 +35,7 @@ public class AdminController {
 
         Disk disk = new Disk();
         disk.setTitle("Lost Forever, Lost Together");
-        disk.setYear(2014);
+        disk.setYear("2014");
         disk.setAmount(3);
         disk.setPrice(39.99);
 
@@ -54,7 +54,7 @@ public class AdminController {
 
         Disk disk2 = new Disk();
         disk2.setTitle("Holy Hell");
-        disk2.setYear(2018);
+        disk2.setYear("2018");
         disk2.setAmount(7);
         disk2.setPrice(59.99);
 
@@ -67,7 +67,7 @@ public class AdminController {
 
         Disk disk3 = new Disk();
         disk3.setTitle("All Our Gods Have Abandoned Us");
-        disk3.setYear(2016);
+        disk3.setYear("2016");
         disk3.setAmount(2);
         disk3.setPrice(49.99);
 
@@ -80,7 +80,7 @@ public class AdminController {
 
         Disk disk4 = new Disk();
         disk4.setTitle("Periphery IV: Hail Stan");
-        disk4.setYear(2019);
+        disk4.setYear("2019");
         disk4.setAmount(8);
         disk4.setPrice(34.99);
 
@@ -99,7 +99,7 @@ public class AdminController {
 
         Disk disk5 = new Disk();
         disk5.setTitle("Anticult");
-        disk5.setYear(2017);
+        disk5.setYear("2017");
         disk5.setAmount(2);
         disk5.setPrice(24.99);
 
@@ -118,7 +118,7 @@ public class AdminController {
 
         Disk disk6 = new Disk();
         disk6.setTitle("Master of Puppets");
-        disk6.setYear(1986);
+        disk6.setYear("1986");
         disk6.setAmount(4);
         disk6.setPrice(64.99);
 
