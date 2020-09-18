@@ -2,7 +2,6 @@ pl/camp/it/store/cd/services/IUserService.class
 pl/camp/it/store/cd/model/Disk.class
 pl/camp/it/store/cd/services/impl/UserServiceImpl.class
 pl/camp/it/store/cd/model/Artist.class
-pl/camp/it/store/cd/dao/impl/ArtistDAOImpl.class
 pl/camp/it/store/cd/services/IBasketService.class
 pl/camp/it/store/cd/dao/IUserDAO.class
 pl/camp/it/store/cd/services/IDiskService.class
@@ -11,10 +10,10 @@ pl/camp/it/store/cd/dao/impl/UserDAOImpl.class
 pl/camp/it/store/cd/controllers/AuthenticationController.class
 pl/camp/it/store/cd/session/SessionObject.class
 pl/camp/it/store/cd/controllers/CommonController.class
-pl/camp/it/store/cd/dao/IGenreDAO.class
-pl/camp/it/store/cd/dao/impl/GenreDAOImpl.class
-pl/camp/it/store/cd/dao/impl/AdminDAO.class
+pl/camp/it/store/cd/filter/DiskFilter.class
+pl/camp/it/store/cd/services/impl/AdminServiceImpl.class
 pl/camp/it/store/cd/AppConfiguration.class
+pl/camp/it/store/cd/dao/impl/AdminDAOImpl.class
 pl/camp/it/store/cd/model/CoverImage.class
 pl/camp/it/store/cd/controllers/AdminController.class
 pl/camp/it/store/cd/model/Admin.class
@@ -25,6 +24,4 @@ pl/camp/it/store/cd/services/IAdminService.class
 pl/camp/it/store/cd/App.class
 pl/camp/it/store/cd/controllers/UserController.class
 pl/camp/it/store/cd/model/User.class
-pl/camp/it/store/cd/dao/IArtistDAO.class
 pl/camp/it/store/cd/services/impl/DiskServiceImpl.class
-pl/camp/it/store/cd/services/impl/AdminService.class

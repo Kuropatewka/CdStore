@@ -23,8 +23,10 @@
 
 <div id="finder" th:fragment="finder">
     <form method="POST" action="/find">
-        <input type="text" placeholder="Search" name="pattern">
+        <input type="text" placeholder="Title / Artist / Genre" name="pattern">
+        <input type="text" placeholder="Year of Release" name="year">
         <input type="submit" value="OK">
+        <a href="/">CLEAR</a>
     </form>
 </div>
 

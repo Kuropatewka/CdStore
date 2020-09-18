@@ -1,5 +1,7 @@
 package pl.camp.it.store.cd.session;
 
+import pl.camp.it.store.cd.filter.DiskFilter;
+import pl.camp.it.store.cd.model.Admin;
 import pl.camp.it.store.cd.model.Disk;
 import pl.camp.it.store.cd.model.User;
 
@@ -8,8 +10,8 @@ import java.util.List;
 public class SessionObject {
     private User user;
     private String lastAddress;
-    private String lastFindPattern;
-    private List<Disk> basket;
+    private DiskFilter diskFilter;
+    private Admin admin;
 
     public User getUser() {
         return user;
@@ -27,19 +29,19 @@ public class SessionObject {
         this.lastAddress = lastAddress;
     }
 
-    public String getLastFindPattern() {
-        return lastFindPattern;
+    public DiskFilter getDiskFilter() {
+        return diskFilter;
     }
 
-    public void setLastFindPattern(String lastFindPattern) {
-        this.lastFindPattern = lastFindPattern;
+    public void setDiskFilter(DiskFilter diskFilter) {
+        this.diskFilter = diskFilter;
     }
 
-    public List<Disk> getBasket() {
-        return basket;
+    public Admin getAdmin() {
+        return admin;
     }
 
-    public void setBasket(List<Disk> basket) {
-        this.basket = basket;
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
     }
 }

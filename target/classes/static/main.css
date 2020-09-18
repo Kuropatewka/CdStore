@@ -82,6 +82,19 @@ body {
     border-radius: 15px;
 }
 
+#finder form a {
+    background: #fffeda;
+    text-align: center;
+    border: 2px solid #eeec82;
+    font-size: 30px;
+    padding: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+}
+
 #content {
     position: absolute;
     top: 500px;

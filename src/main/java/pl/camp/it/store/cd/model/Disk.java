@@ -1,6 +1,7 @@
 package pl.camp.it.store.cd.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity(name = "tdisk")
@@ -104,4 +105,5 @@ public class Disk {
     public int hashCode() {
         return this.id;
     }
+
 }

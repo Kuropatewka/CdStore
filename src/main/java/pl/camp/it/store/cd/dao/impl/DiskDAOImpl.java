@@ -46,25 +46,13 @@ public class DiskDAOImpl implements IDiskDAO {
     }
 
     @Override
-    public List<Disk> getDiskByFilter(String pattern, Genre genre, Artist artist, String year) {
+    public List<Disk> getDiskByFilter(String pattern, String year) {
         Session session = sessionFactory.openSession();
-        Query<Disk> query = session.createQuery("FROM pl.camp.it.store.cd.model.Disk WHERE title like :title AND genre = :genre AND artist = :artist AND year = :year");
+        Query<Disk> query = session.createQuery("FROM pl.camp.it.store.cd.model.Disk WHERE title like :title AND year = :year");
         if (pattern != null) {
             query.setParameter("title", "%" + pattern + "%");
         } else {
             query.setParameter("title", "*");
-        }
-
-        if (genre != null) {
-            query.setParameter("genre", genre);
-        } else {
-            query.setParameter("genre", "*");
-        }
-
-        if (artist != null) {
-            query.setParameter("artist", artist);
-        } else {
-            query.setParameter("artist", "*");
         }
 
         if (year != null) {
@@ -79,7 +67,7 @@ public class DiskDAOImpl implements IDiskDAO {
     }
 
     @Override
-    public List<Disk> getDiskByTitlePattern(String pattern) {
+    public List<Disk> getDiskByPattern(String pattern) {
         Session session = sessionFactory.openSession();
         Query<Disk> query = session.createQuery("FROM pl.camp.it.store.cd.model.Disk WHERE title like :title");
         query.setParameter("title", "%" + pattern + "%");
@@ -99,23 +87,23 @@ public class DiskDAOImpl implements IDiskDAO {
     }
 
     @Override
-    public List<Disk> getArtistByPattern(String pattern) {
+    public List<Artist> getArtistByPattern(String pattern) {
         Session session = sessionFactory.openSession();
-        Query<Disk> query = session.createQuery("FROM pl.camp.it.store.cd.model.Artist WHERE name like :name");
+        Query<Artist> query = session.createQuery("FROM pl.camp.it.store.cd.model.Artist WHERE name like :name");
         query.setParameter("name", "%" + pattern + "%");
-        List<Disk> disk = query.getResultList();
+        List<Artist> artists = query.getResultList();
         session.close();
-        return disk;
+        return artists;
     }
 
     @Override
-    public List<Disk> getGenreByPattern(String pattern) {
+    public List<Genre> getGenreByPattern(String pattern) {
         Session session = sessionFactory.openSession();
-        Query<Disk> query = session.createQuery("FROM pl.camp.it.store.cd.model.Artist WHERE name like :name");
+        Query<Genre> query = session.createQuery("FROM pl.camp.it.store.cd.model.Genre WHERE name like :name");
         query.setParameter("name", "%" + pattern + "%");
-        List<Disk> disk = query.getResultList();
+        List<Genre> genres = query.getResultList();
         session.close();
-        return disk;
+        return genres;
     }
 
     @Override

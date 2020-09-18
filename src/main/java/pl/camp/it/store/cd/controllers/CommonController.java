@@ -30,26 +30,34 @@ public class CommonController {
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String main(Model model) {
         model.addAttribute("isLogged", sessionObject.getUser() != null);
+        sessionObject.getDiskFilter().reset();
+
         List<Disk> disks = this.diskService.getAllDisks();
         model.addAttribute("disks", disks);
         this.sessionObject.setLastAddress("/main");
         return "main";
     }
 
-    @RequestMapping(value = "/find", method = RequestMethod.POST)
-    public String findDisks(Model model, @RequestParam String pattern) {
+    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    public String findDisks(Model model) {
         model.addAttribute("isLogged", sessionObject.getUser() != null);
-        List<Disk> disks = this.diskService.findDisks(pattern);
-        this.sessionObject.setLastFindPattern(pattern);
+        List<Disk> disks = this.diskService.findDiskByFilter(sessionObject.getDiskFilter());
         model.addAttribute("disks", disks);
         this.sessionObject.setLastAddress("/find");
         return "main";
     }
 
-    @RequestMapping(value = "/find", method = RequestMethod.GET)
-    public String findDisksAfterRedirect(Model model) {
+    @RequestMapping(value = "/find", method = RequestMethod.POST)
+    public String findDisksAfterRedirect(Model model, @RequestParam String pattern, @RequestParam String year) {
         model.addAttribute("isLogged", sessionObject.getUser() != null);
-        List<Disk> disks = this.diskService.findDisks(sessionObject.getLastFindPattern());
+        if (!pattern.equals("")) {
+            sessionObject.getDiskFilter().setLastFindPattern(pattern);
+        }
+        if (!year.equals("")) {
+            sessionObject.getDiskFilter().setYear(year);
+        }
+        List<Disk> disks = this.diskService.findDiskByFilter(sessionObject.getDiskFilter());
+        this.sessionObject.getDiskFilter().setLastFindPattern(pattern);
         model.addAttribute("disks", disks);
         this.sessionObject.setLastAddress("/find");
         return "main";

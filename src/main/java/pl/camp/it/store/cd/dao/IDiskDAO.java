@@ -9,11 +9,11 @@ import java.util.List;
 public interface IDiskDAO {
     void addDisk(Disk disk);
     List<Disk> getAllDisks();
-    List<Disk> getDiskByFilter(String pattern, Genre genre, Artist artist, String year);
-    List<Disk> getDiskByTitlePattern(String pattern);
+    List<Disk> getDiskByFilter(String pattern, String year);
+    List<Disk> getDiskByPattern(String pattern);
     List<Disk> getDiskByYear(String year);
-    List<Disk> getArtistByPattern(String year);
-    List<Disk> getGenreByPattern(String year);
+    List<Artist> getArtistByPattern(String pattern);
+    List<Genre> getGenreByPattern(String pattern);
     List<Disk> getDiskByArtistId(int id);
     List<Disk> getDiskByGenreId(int id);
     Disk getDiskById(int id);
