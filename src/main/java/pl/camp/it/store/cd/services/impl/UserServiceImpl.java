@@ -3,7 +3,9 @@ package pl.camp.it.store.cd.services.impl;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.camp.it.store.cd.dao.IAdminDAO;
 import pl.camp.it.store.cd.dao.IUserDAO;
+import pl.camp.it.store.cd.model.Admin;
 import pl.camp.it.store.cd.model.User;
 import pl.camp.it.store.cd.services.IUserService;
 
@@ -12,6 +14,9 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     IUserDAO userDAO;
+
+    @Autowired
+    IAdminDAO adminDAO;
 
     @Override
     public void addUser(User user) {
@@ -36,6 +41,13 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public boolean registerUser(User user, String password2) {
+
+        Admin admin = this.adminDAO.getAdminByLogin(user.getLogin());
+
+        if(admin == null) {
+            return false;
+        }
+
         if(!user.getPassword().equals(password2)) {
             return false;
         }

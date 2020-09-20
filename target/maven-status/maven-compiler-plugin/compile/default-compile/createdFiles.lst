@@ -13,6 +13,7 @@ pl/camp/it/store/cd/controllers/CommonController.class
 pl/camp/it/store/cd/filter/DiskFilter.class
 pl/camp/it/store/cd/services/impl/AdminServiceImpl.class
 pl/camp/it/store/cd/AppConfiguration.class
+pl/camp/it/store/cd/utils/Converters.class
 pl/camp/it/store/cd/dao/impl/AdminDAOImpl.class
 pl/camp/it/store/cd/model/CoverImage.class
 pl/camp/it/store/cd/controllers/AdminController.class

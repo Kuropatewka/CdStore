@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 import pl.camp.it.store.cd.dao.IUserDAO;
 import pl.camp.it.store.cd.model.User;
 
+import javax.persistence.NoResultException;
+
 @Repository
 public class UserDAOImpl implements IUserDAO {
 
@@ -38,7 +40,15 @@ public class UserDAOImpl implements IUserDAO {
         Session session = sessionFactory.openSession();
         Query<User> query = session.createQuery("FROM pl.camp.it.store.cd.model.User WHERE login = :login");
         query.setParameter("login", login);
-        User user = query.getSingleResult();
+
+        User user = null;
+
+        try {
+            user = query.getSingleResult();
+        } catch (NoResultException e) {
+            session.close();
+            return null;
+        }
         session.close();
         return user;
     }
