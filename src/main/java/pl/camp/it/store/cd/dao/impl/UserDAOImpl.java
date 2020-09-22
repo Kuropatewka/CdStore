@@ -37,19 +37,16 @@ public class UserDAOImpl implements IUserDAO {
 
     @Override
     public User getUserByLogin(String login) {
+        try {
         Session session = sessionFactory.openSession();
         Query<User> query = session.createQuery("FROM pl.camp.it.store.cd.model.User WHERE login = :login");
         query.setParameter("login", login);
-
-        User user = null;
-
-        try {
-            user = query.getSingleResult();
-        } catch (NoResultException e) {
-            session.close();
-            return null;
-        }
+        User user = query.getSingleResult();
         session.close();
         return user;
+        } catch (NoResultException e) {
+            return null;
+        }
+
     }
 }

@@ -42,9 +42,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public boolean registerUser(User user, String password2) {
 
-        Admin admin = this.adminDAO.getAdminByLogin(user.getLogin());
-
-        if(admin == null) {
+        if(user.getLogin().equals("admin")) {
             return false;
         }
 
@@ -55,5 +53,15 @@ public class UserServiceImpl implements IUserService {
         user.setPassword(DigestUtils.md5Hex(user.getPassword()));
         this.userDAO.addUser(user);
         return true;
+    }
+
+    @Override
+    public User getUserByLogin(String login) {
+        return this.userDAO.getUserByLogin(login);
+    }
+
+    @Override
+    public Admin getAdminByLogin(String login) {
+        return this.adminDAO.getAdminByLogin(login);
     }
 }

@@ -25,7 +25,6 @@ public class AdminController {
         Admin admin = new Admin();
         admin.setLogin("admin");
         admin.setPassword(DigestUtils.md5Hex("admin"));
-        model.addAttribute("isLogged", false);
         this.adminService.addAdmin(admin);
         return "redirect:/main";
     }

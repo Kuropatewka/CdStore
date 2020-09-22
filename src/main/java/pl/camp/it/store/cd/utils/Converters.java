@@ -5,7 +5,7 @@ import pl.camp.it.store.cd.model.User;
 
 public class Converters {
 
-    public static Admin convertUserToAdmin(User user) {
+    public static Admin convertAdminToUser(User user) {
         Admin admin = new Admin();
         admin.setLogin(user.getLogin());
         admin.setPassword(user.getPassword());

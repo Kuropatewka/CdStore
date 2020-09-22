@@ -10,6 +10,8 @@ import pl.camp.it.store.cd.dao.IAdminDAO;
 import pl.camp.it.store.cd.model.Admin;
 import pl.camp.it.store.cd.model.User;
 
+import javax.persistence.NoResultException;
+
 @Repository
 public class AdminDAOImpl implements IAdminDAO {
 
@@ -35,11 +37,15 @@ public class AdminDAOImpl implements IAdminDAO {
 
     @Override
     public Admin getAdminByLogin(String login) {
-        Session session = sessionFactory.openSession();
-        Query<Admin> query = session.createQuery("FROM pl.camp.it.store.cd.model.Admin WHERE login = :login");
-        query.setParameter("login", login);
-        Admin admin = query.getSingleResult();
-        session.close();
-        return admin;
+        try {
+            Session session = sessionFactory.openSession();
+            Query<Admin> query = session.createQuery("FROM pl.camp.it.store.cd.model.Admin WHERE login = :login");
+            query.setParameter("login", login);
+            Admin admin = query.getSingleResult();
+            session.close();
+            return admin;
+        } catch (NoResultException e) {
+            return null;
+        }
     }
 }

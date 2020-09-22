@@ -21,6 +21,7 @@ public class AdminServiceImpl implements IAdminService {
 
     @Override
     public boolean authenticate(Admin admin) {
+
         Admin adminFromDatabase = this.adminDAO.getAdminByLogin(admin.getLogin());
 
         if (adminFromDatabase == null) {

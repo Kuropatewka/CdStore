@@ -41,17 +41,18 @@ public class AuthenticationController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute User user) {
+
         boolean authenticationResult = this.userService.authenticate(user);
 
-        Admin admin = Converters.convertUserToAdmin(user);
+        Admin admin = Converters.convertAdminToUser(user);
         boolean authenticationAdminResult = this.adminService.authenticate(admin);
 
         if(authenticationAdminResult) {
-            this.sessionObject.setAdmin(admin);
+            this.sessionObject.setAdmin(this.userService.getAdminByLogin(admin.getLogin()));
         }
 
         if(authenticationResult) {
-            this.sessionObject.setUser(user);
+            this.sessionObject.setUser(this.userService.getUserByLogin(user.getLogin()));
         }
 
         if (authenticationResult || authenticationAdminResult) {
