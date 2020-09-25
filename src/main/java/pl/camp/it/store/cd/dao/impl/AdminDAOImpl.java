@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.camp.it.store.cd.dao.IAdminDAO;
 import pl.camp.it.store.cd.model.Admin;
-import pl.camp.it.store.cd.model.User;
 
 import javax.persistence.NoResultException;
 

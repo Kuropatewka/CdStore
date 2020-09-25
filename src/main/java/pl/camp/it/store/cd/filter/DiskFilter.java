@@ -1,8 +1,5 @@
 package pl.camp.it.store.cd.filter;
 
-import pl.camp.it.store.cd.model.Artist;
-import pl.camp.it.store.cd.model.Genre;
-
 public class DiskFilter {
 
     private String lastFindPattern;

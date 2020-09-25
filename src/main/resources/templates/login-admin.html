@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>CD-store</title>
+    <link rel="stylesheet" type="text/css" href="login.css" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+</head>
+<body>
+
+<div th:replace="szablon.html :: logo"></div>
+<div th:replace="szablon.html :: userMenu"></div>
+
+<form id="login-form" method="POST" th:object="${admin}">
+
+    <h1><b>Sign-in</b></h1>
+
+    <div class="textbox">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="login" th:field="*{login}">
+    </div>
+
+    <div class="textbox">
+        <i class="fa fa-lock"></i>
+        <input type="password" placeholder="password" th:field="*{password}">
+    </div>
+
+    <div class="button">
+        <input type="submit" value="OK">
+    </div>
+
+</form>
+
+</body>
+</html>

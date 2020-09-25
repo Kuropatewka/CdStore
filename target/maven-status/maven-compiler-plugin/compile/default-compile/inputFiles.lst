@@ -23,6 +23,7 @@
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/services/IBasketService.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/controllers/CommonController.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/dao/IUserDAO.java
+/home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/controllers/AuthenticationAdminController.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/services/impl/UserServiceImpl.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/model/Admin.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/controllers/AdminController.java

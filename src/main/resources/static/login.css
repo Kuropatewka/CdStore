@@ -64,9 +64,28 @@ body {
 .register-button {
     text-align: center;
     margin: 12px 0;
+    display: inline-block;
+}
+
+.adminLogin-button {
+    text-align: center;
+    margin: 12px 0;
+    display: inline-block;
 }
 
 .register-button a{
+    width: 100%;
+    text-decoration: none;
+    background: none;
+    border: 2px solid #eeec82;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0;
+    color: black;
+}
+
+.adminLogin-button a{
     width: 100%;
     text-decoration: none;
     background: none;

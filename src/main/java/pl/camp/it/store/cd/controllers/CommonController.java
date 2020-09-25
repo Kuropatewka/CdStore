@@ -30,6 +30,7 @@ public class CommonController {
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String main(Model model) {
         model.addAttribute("isLogged", sessionObject.getUser() != null);
+        model.addAttribute("isAdminLogged", sessionObject.getAdmin() != null);
         sessionObject.getDiskFilter().reset();
 
         List<Disk> disks = this.diskService.getAllDisks();
@@ -41,6 +42,7 @@ public class CommonController {
     @RequestMapping(value = "/find", method = RequestMethod.GET)
     public String findDisks(Model model) {
         model.addAttribute("isLogged", sessionObject.getUser() != null);
+        model.addAttribute("isAdminLogged", sessionObject.getAdmin() != null);
         List<Disk> disks = this.diskService.findDiskByFilter(sessionObject.getDiskFilter());
         model.addAttribute("disks", disks);
         this.sessionObject.setLastAddress("/find");
@@ -50,6 +52,7 @@ public class CommonController {
     @RequestMapping(value = "/find", method = RequestMethod.POST)
     public String findDisksAfterRedirect(Model model, @RequestParam String pattern, @RequestParam String year) {
         model.addAttribute("isLogged", sessionObject.getUser() != null);
+        model.addAttribute("isAdminLogged", sessionObject.getAdmin() != null);
         if (!pattern.equals("")) {
             sessionObject.getDiskFilter().setLastFindPattern(pattern);
         }

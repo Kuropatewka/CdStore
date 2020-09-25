@@ -7,11 +7,8 @@ import pl.camp.it.store.cd.filter.DiskFilter;
 import pl.camp.it.store.cd.model.Artist;
 import pl.camp.it.store.cd.model.Disk;
 import pl.camp.it.store.cd.model.Genre;
-import pl.camp.it.store.cd.model.User;
 import pl.camp.it.store.cd.services.IDiskService;
-import pl.camp.it.store.cd.session.SessionObject;
 
-import javax.annotation.Resource;
 import java.util.*;
 
 @Service

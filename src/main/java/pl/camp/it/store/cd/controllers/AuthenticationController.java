@@ -6,12 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.camp.it.store.cd.model.Admin;
 import pl.camp.it.store.cd.model.User;
-import pl.camp.it.store.cd.services.IAdminService;
 import pl.camp.it.store.cd.services.IUserService;
 import pl.camp.it.store.cd.session.SessionObject;
-import pl.camp.it.store.cd.utils.Converters;
 
 import javax.annotation.Resource;
 
@@ -20,9 +17,6 @@ public class AuthenticationController {
 
     @Autowired
     IUserService userService;
-
-    @Autowired
-    IAdminService adminService;
 
     @Resource
     SessionObject sessionObject;
@@ -33,9 +27,10 @@ public class AuthenticationController {
 
         if(this.sessionObject.getUser() == null) {
             model.addAttribute("isLogged", false);
+            model.addAttribute("isAdminLogged", false);
             return "login";
         } else {
-            return "redirect:main";
+            return "redirect:/main";
         }
     }
 
@@ -44,18 +39,8 @@ public class AuthenticationController {
 
         boolean authenticationResult = this.userService.authenticate(user);
 
-        Admin admin = Converters.convertAdminToUser(user);
-        boolean authenticationAdminResult = this.adminService.authenticate(admin);
-
-        if(authenticationAdminResult) {
-            this.sessionObject.setAdmin(this.userService.getAdminByLogin(admin.getLogin()));
-        }
-
-        if(authenticationResult) {
+        if (authenticationResult) {
             this.sessionObject.setUser(this.userService.getUserByLogin(user.getLogin()));
-        }
-
-        if (authenticationResult || authenticationAdminResult) {
             return "redirect:/main";
         } else {
             return "redirect:/login";
