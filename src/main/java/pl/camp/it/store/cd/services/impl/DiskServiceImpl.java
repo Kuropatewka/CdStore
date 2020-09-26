@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.camp.it.store.cd.dao.IDiskDAO;
 import pl.camp.it.store.cd.filter.DiskFilter;
 import pl.camp.it.store.cd.model.Artist;
+import pl.camp.it.store.cd.model.CoverImage;
 import pl.camp.it.store.cd.model.Disk;
 import pl.camp.it.store.cd.model.Genre;
 import pl.camp.it.store.cd.services.IDiskService;
@@ -18,13 +19,48 @@ public class DiskServiceImpl implements IDiskService {
     IDiskDAO diskDAO;
 
     @Override
-    public void addDisk(Disk disk) {
+    public void addDisk(Disk disk, Artist artist, Genre genre, CoverImage coverImage) {
+
+        if(artistInDb(artist)) {
+            disk.setArtist(this.diskDAO.getArtistByName(artist.getName()));
+        } else {
+            disk.setArtist(artist);
+        }
+
+        if(genreInDb(genre)) {
+            disk.setGenre(this.diskDAO.getGenreByName(genre.getName()));
+        } else {
+            disk.setGenre(genre);
+        }
+        disk.setCoverImage(coverImage);
         this.diskDAO.addDisk(disk);
     }
 
     @Override
     public List<Disk> getAllDisks() {
         return this.diskDAO.getAllDisks();
+    }
+
+    @Override
+    public boolean artistInDb(Artist artist) {
+
+        for(Artist tempArtist : this.diskDAO.getAllArtists()) {
+            if(tempArtist.getName().equals(artist.getName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean genreInDb(Genre genre) {
+
+        for(Genre tempGenre : this.diskDAO.getAllGenres()) {
+            if(tempGenre.getName().equals(genre.getName())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

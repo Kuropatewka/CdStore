@@ -11,6 +11,7 @@ import pl.camp.it.store.cd.model.Artist;
 import pl.camp.it.store.cd.model.Disk;
 import pl.camp.it.store.cd.model.Genre;
 
+import javax.persistence.NoResultException;
 import java.util.List;
 
 @Repository
@@ -43,6 +44,24 @@ public class DiskDAOImpl implements IDiskDAO {
         List<Disk> disk = query.getResultList();
         session.close();
         return disk;
+    }
+
+    @Override
+    public List<Artist> getAllArtists() {
+        Session session = sessionFactory.openSession();
+        Query<Artist> query = session.createQuery("FROM pl.camp.it.store.cd.model.Artist");
+        List<Artist> artists = query.getResultList();
+        session.close();
+        return artists;
+    }
+
+    @Override
+    public List<Genre> getAllGenres() {
+        Session session = sessionFactory.openSession();
+        Query<Genre> query = session.createQuery("FROM pl.camp.it.store.cd.model.Genre");
+        List<Genre> genres = query.getResultList();
+        session.close();
+        return genres;
     }
 
     @Override
@@ -136,5 +155,33 @@ public class DiskDAOImpl implements IDiskDAO {
         return disk;
     }
 
+    @Override
+    public Artist getArtistByName(String name) {
+        try {
+            Session session = sessionFactory.openSession();
+            Query<Artist> query = session.createQuery("FROM pl.camp.it.store.cd.model.Artist WHERE name = :name");
+            query.setParameter("name", name);
+            Artist artist = query.getSingleResult();
+            session.close();
+            return artist;
+        } catch (NoResultException e) {
+            return null;
+        }
 
+    }
+
+    @Override
+    public Genre getGenreByName(String name) {
+        try {
+            Session session = sessionFactory.openSession();
+            Query<Genre> query = session.createQuery("FROM pl.camp.it.store.cd.model.Genre WHERE name = :name");
+            query.setParameter("name", name);
+            Genre genre = query.getSingleResult();
+            session.close();
+            return genre;
+        } catch (NoResultException e) {
+            return null;
+        }
+
+    }
 }

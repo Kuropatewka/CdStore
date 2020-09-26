@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.camp.it.store.cd.model.Admin;
-import pl.camp.it.store.cd.model.User;
 import pl.camp.it.store.cd.services.IAdminService;
 import pl.camp.it.store.cd.services.IUserService;
 import pl.camp.it.store.cd.session.SessionObject;

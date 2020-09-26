@@ -6,6 +6,7 @@ pl/camp/it/store/cd/services/impl/AdminServiceImpl.class
 pl/camp/it/store/cd/AppConfiguration.class
 pl/camp/it/store/cd/utils/Converters.class
 pl/camp/it/store/cd/dao/impl/AdminDAOImpl.class
+pl/camp/it/store/cd/controllers/DiskController.class
 pl/camp/it/store/cd/App.class
 pl/camp/it/store/cd/model/User.class
 pl/camp/it/store/cd/services/IUserService.class

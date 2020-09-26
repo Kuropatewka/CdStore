@@ -15,6 +15,7 @@
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/services/IAdminService.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/dao/IAdminDAO.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/model/Disk.java
+/home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/controllers/DiskController.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/services/impl/AdminServiceImpl.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/utils/Converters.java
 /home/piotr/IdeaProjects/cd-store/src/main/java/pl/camp/it/store/cd/services/impl/DiskServiceImpl.java

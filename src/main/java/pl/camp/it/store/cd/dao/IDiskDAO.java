@@ -17,4 +17,8 @@ public interface IDiskDAO {
     List<Disk> getDiskByArtistId(int id);
     List<Disk> getDiskByGenreId(int id);
     Disk getDiskById(int id);
+    List<Artist> getAllArtists();
+    List<Genre> getAllGenres();
+    Artist getArtistByName(String name);
+    Genre getGenreByName(String name);
 }
