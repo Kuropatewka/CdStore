@@ -45,7 +45,6 @@ public class UserController {
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout() {
         this.sessionObject.setUser(null);
-        this.sessionObject.setAdmin(null);
         return "redirect:/main";
     }
 }

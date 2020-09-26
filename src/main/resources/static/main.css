@@ -55,6 +55,16 @@ body {
     width: 150px;
 }
 
+#login-admin-button {
+    background-image: url("login-admin-button.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: right;
+    display: inline-block;
+    height: 108px;
+    width: 150px;
+}
+
 #finder {
     position: absolute;
     top: 250px;

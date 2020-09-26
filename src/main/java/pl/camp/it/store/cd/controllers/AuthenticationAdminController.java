@@ -51,5 +51,11 @@ public class AuthenticationAdminController {
             return "redirect:/login-admin";
         }
     }
+
+    @RequestMapping(value = "/logout-admin", method = RequestMethod.GET)
+    public String logoutAdmin() {
+        this.sessionObject.setAdmin(null);
+        return "redirect:/main";
+    }
 }
 
