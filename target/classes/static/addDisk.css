@@ -7,11 +7,12 @@
     color: white;
 }
 
-.labels {
+.label {
     width: 100%;
     overflow: hidden;
     font-size: 20px;
     padding: 8px 0;
     margin: 8px 0;
     border-bottom: 1px solid #eeec82;
+    text-align: center;
 }

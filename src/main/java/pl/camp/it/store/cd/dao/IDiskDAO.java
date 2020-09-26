@@ -20,5 +20,5 @@ public interface IDiskDAO {
     List<Artist> getAllArtists();
     List<Genre> getAllGenres();
     Artist getArtistByName(String name);
-    Genre getGenreByName(String name);
+    Genre getGenreByName(String type);
 }

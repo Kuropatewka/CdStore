@@ -35,7 +35,7 @@ public class DiskController {
         return "addDisk";
     }
 
-    @RequestMapping(value = "addDisk", method = RequestMethod.POST)
+    @RequestMapping(value = "/addDisk", method = RequestMethod.POST)
     public String addDisk(@ModelAttribute Disk disk, @ModelAttribute Artist artist,
                           @ModelAttribute Genre genre, @ModelAttribute CoverImage coverImage) {
         this.diskService.addDisk(disk, artist, genre, coverImage);

@@ -118,8 +118,8 @@ public class DiskDAOImpl implements IDiskDAO {
     @Override
     public List<Genre> getGenreByPattern(String pattern) {
         Session session = sessionFactory.openSession();
-        Query<Genre> query = session.createQuery("FROM pl.camp.it.store.cd.model.Genre WHERE name like :name");
-        query.setParameter("name", "%" + pattern + "%");
+        Query<Genre> query = session.createQuery("FROM pl.camp.it.store.cd.model.Genre WHERE type like :type");
+        query.setParameter("type", "%" + pattern + "%");
         List<Genre> genres = query.getResultList();
         session.close();
         return genres;
@@ -171,11 +171,11 @@ public class DiskDAOImpl implements IDiskDAO {
     }
 
     @Override
-    public Genre getGenreByName(String name) {
+    public Genre getGenreByName(String type) {
         try {
             Session session = sessionFactory.openSession();
-            Query<Genre> query = session.createQuery("FROM pl.camp.it.store.cd.model.Genre WHERE name = :name");
-            query.setParameter("name", name);
+            Query<Genre> query = session.createQuery("FROM pl.camp.it.store.cd.model.Genre WHERE type = :type");
+            query.setParameter("type", type);
             Genre genre = query.getSingleResult();
             session.close();
             return genre;

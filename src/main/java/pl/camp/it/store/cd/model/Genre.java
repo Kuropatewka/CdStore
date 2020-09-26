@@ -8,7 +8,7 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(nullable = false, unique = true)
-    private String name;
+    private String type;
 
     public int getId() {
         return id;
@@ -18,19 +18,19 @@ public class Genre {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
     public String toString() {
         return "Genre{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

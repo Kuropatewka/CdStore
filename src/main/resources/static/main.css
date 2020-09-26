@@ -66,13 +66,14 @@ body {
 }
 
 #add-disk-button {
+    position: absolute;
     background-image: url("plus.png");
     background-size: contain;
     background-repeat: no-repeat;
-    float: right;
-    top: 120px;
+    right: 0;
+    top: 130px;
     height: 108px;
-    width: 150px;
+    width: 100px;
 }
 
 #finder {

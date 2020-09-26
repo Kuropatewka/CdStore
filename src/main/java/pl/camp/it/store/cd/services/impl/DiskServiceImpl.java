@@ -28,7 +28,7 @@ public class DiskServiceImpl implements IDiskService {
         }
 
         if(genreInDb(genre)) {
-            disk.setGenre(this.diskDAO.getGenreByName(genre.getName()));
+            disk.setGenre(this.diskDAO.getGenreByName(genre.getType()));
         } else {
             disk.setGenre(genre);
         }
@@ -56,7 +56,7 @@ public class DiskServiceImpl implements IDiskService {
     public boolean genreInDb(Genre genre) {
 
         for(Genre tempGenre : this.diskDAO.getAllGenres()) {
-            if(tempGenre.getName().equals(genre.getName())) {
+            if(tempGenre.getType().equals(genre.getType())) {
                 return true;
             }
         }
