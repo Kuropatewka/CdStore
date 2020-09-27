@@ -34,7 +34,7 @@ public class CommonController {
         this.sessionObject.getDiskFilter().reset();
 
         List<Disk> disks = this.diskService.getAllDisks();
-        model.addAttribute("disks", disks);
+        model.addAttribute("disk", disks);
         this.sessionObject.setLastAddress("/main");
         return "main";
     }
@@ -44,7 +44,7 @@ public class CommonController {
         model.addAttribute("isLogged", this.sessionObject.getUser() != null);
         model.addAttribute("isAdminLogged", this.sessionObject.getAdmin() != null);
         List<Disk> disks = this.diskService.findDiskByFilter(this.sessionObject.getDiskFilter());
-        model.addAttribute("disks", disks);
+        model.addAttribute("disk", disks);
         this.sessionObject.setLastAddress("/find");
         return "main";
     }
@@ -61,7 +61,7 @@ public class CommonController {
         }
         List<Disk> disks = this.diskService.findDiskByFilter(this.sessionObject.getDiskFilter());
         this.sessionObject.getDiskFilter().setLastFindPattern(pattern);
-        model.addAttribute("disks", disks);
+        model.addAttribute("disk", disks);
         this.sessionObject.setLastAddress("/find");
         return "main";
     }

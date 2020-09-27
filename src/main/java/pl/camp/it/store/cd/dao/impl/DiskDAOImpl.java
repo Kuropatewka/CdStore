@@ -38,6 +38,23 @@ public class DiskDAOImpl implements IDiskDAO {
     }
 
     @Override
+    public void updateDisk(Disk disk) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.update(disk);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
     public List<Disk> getAllDisks() {
         Session session = sessionFactory.openSession();
         Query<Disk> query = session.createQuery("FROM pl.camp.it.store.cd.model.Disk");

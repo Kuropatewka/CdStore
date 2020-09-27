@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface IDiskService {
     void addDisk(Disk disk, Artist artist, Genre genre, CoverImage coverImage);
+    void updateDisk(Disk disk, int id);
     List<Disk> getAllDisks();
     List<Disk> findDiskByYear(String year);
     List<Disk> findDiskByPattern(String pattern);
@@ -17,4 +18,5 @@ public interface IDiskService {
     List<Disk> findDiskByFilter(DiskFilter diskFilter);
     boolean artistInDb(Artist artist);
     boolean genreInDb(Genre genre);
+    Disk getDiskById(int id);
 }

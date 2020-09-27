@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>CD-store</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="addDisk.css" />
+</head>
+<body>
+
+<div th:replace="szablon.html :: logo"></div>
+<div th:replace="szablon.html :: userMenu"></div>
+
+<form id="form" method="POST" th:object="${disk}" >
+    <div class="label">
+        <input type="number" placeholder="Amount" th:field="*{amount}"><br>
+    </div>
+    <div class="label">
+        <input type="number" placeholder="Price" th:field="*{price}"><br>
+    </div>
+    <div class="label">
+        <input type="submit" value="OK">
+    </div>
+
+</form>
+
+</body>
+</html>

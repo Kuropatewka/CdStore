@@ -37,6 +37,16 @@ public class DiskServiceImpl implements IDiskService {
     }
 
     @Override
+    public void updateDisk(Disk disk, int id) {
+        this.diskDAO.updateDisk(disk);
+    }
+
+    @Override
+    public Disk getDiskById(int id) {
+        return this.diskDAO.getDiskById(id);
+    }
+
+    @Override
     public List<Disk> getAllDisks() {
         return this.diskDAO.getAllDisks();
     }

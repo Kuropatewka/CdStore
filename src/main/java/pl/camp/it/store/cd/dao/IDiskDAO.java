@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface IDiskDAO {
     void addDisk(Disk disk);
+    void updateDisk(Disk disk);
     List<Disk> getAllDisks();
     List<Disk> getDiskByFilter(String pattern, String year);
     List<Disk> getDiskByPattern(String pattern);

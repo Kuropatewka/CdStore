@@ -41,35 +41,39 @@
 </div>
 
 <div id="content" th:fragment="content">
-    <div class="disk" th:block th:each="currentDisk : ${disks}">
-            <div class="labels">
-                <div class="label"><b>Title:</b></div>
-                <div class="value" th:text="${currentDisk.title}"></div>
-            </div>
+    <div class="disk" th:block th:each="currentDisk : ${disk}">
+        <div class="labels">
+            <div class="label"><b>Title:</b></div>
+            <div class="value" th:text="${currentDisk.title}"></div>
+        </div>
 
-            <div class="labels">
-                <div class="label"><b>Artist:</b></div>
-                <div class="value" th:text="${currentDisk.artist.name}"></div>
-            </div>
+        <div class="labels">
+            <div class="label"><b>Artist:</b></div>
+            <div class="value" th:text="${currentDisk.artist.name}"></div>
+        </div>
 
-            <div class="labels">
-                <div class="label"><b>Genre:</b></div>
-                <div class="value" th:text="${currentDisk.genre.type}"></div>
-            </div>
+        <div class="labels">
+            <div class="label"><b>Genre:</b></div>
+            <div class="value" th:text="${currentDisk.genre.type}"></div>
+        </div>
 
-            <div class="labels">
-                <div class="label"><b>Year release:</b></div>
-                <div class="value" th:text="${currentDisk.year}"></div>
-            </div>
+        <div class="labels">
+            <div class="label"><b>Year release:</b></div>
+            <div class="value" th:text="${currentDisk.year}"></div>
+        </div>
 
-            <div class="labels">
-                <div class="label"><b>Price:</b></div>
-                <div class="value" th:text="${currentDisk.price}"></div>
-            </div>
+        <div class="labels">
+            <div class="label"><b>Price:</b></div>
+            <div class="value" th:text="${currentDisk.price}"></div>
+        </div>
 
-            <div class="images">
-                <img th:src="${currentDisk.coverImage.file}"/>
-            </div>
+        <th:block th:if="${isAdminLogged}">
+            <a th:href="@{/editDisk/{id}(id=${currentDisk.id})}">Edit</a>
+        </th:block>
+
+        <div class="images">
+            <img th:src="${currentDisk.coverImage.file}"/>
+        </div>
     </div>
 </div>
 
